@@ -1,0 +1,93 @@
+:root {
+  --main-bg: #343a40;
+  --gameboard-border: #f8f9fad3;
+  --O: #f03e3e;
+  --X: #228be6;
+  --player-color: #22b8cf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: "Caveat", cursive; */
+
+  width: 100%;
+  height: 100vh;
+
+  user-select: none;
+
+  background-color: var(--main-bg);
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+#playerText {
+  font-size: 40px;
+  color: #fff;
+}
+
+#restartBtn {
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+
+  cursor: pointer;
+}
+
+#gameboard {
+  width: 360px;
+  height: 360px;
+
+  margin-top: 24px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 48px;
+
+  color: var(--player-color);
+}
+
+.middle-box {
+  border: 3px solid var(--gameboard-border);
+}
+
+.leftright-box {
+  border-top: 3px solid var(--gameboard-border);
+  border-bottom: 3px solid var(--gameboard-border);
+}
+
+.topbottom-box {
+  border-left: 3px solid var(--gameboard-border);
+  border-right: 3px solid var(--gameboard-border);
+}
