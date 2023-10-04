@@ -22,7 +22,7 @@ const startGame = () => {
 function boxClicked(e) {
   const id = e.target.id;
 
-  if (!spaces[id]) {
+  if (!spaces[id] && !playerHasWon()) {
     spaces[id] = currentPlayer;
     e.target.innerText = currentPlayer;
 
@@ -31,7 +31,7 @@ function boxClicked(e) {
     e.target.style.color = currentColor;
 
     if (playerHasWon() !== false) {
-      playerText = `${currentPlayer} has won!`;
+      playerText.innerText = `${currentPlayer} has won!`;
       let winningBlocks = playerHasWon();
 
       winningBlocks.map(
@@ -76,7 +76,7 @@ function restart() {
     box.style.backgroundColor = "";
   });
 
-  playerText = "Tic Tac Toe";
+  playerText.innerText = "Tic Tac Toe";
 
   currentPlayer = xText;
 }
