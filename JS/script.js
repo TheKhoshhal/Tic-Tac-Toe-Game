@@ -11,6 +11,7 @@ let winnerInducator = getComputedStyle(document.body).getPropertyValue(
 const oText = "O";
 const xText = "X";
 let currentPlayer = xText;
+let currentColor;
 
 let spaces = Array(9).fill(null);
 
@@ -24,6 +25,10 @@ function boxClicked(e) {
   if (!spaces[id]) {
     spaces[id] = currentPlayer;
     e.target.innerText = currentPlayer;
+
+    currentColor = currentPlayer == xText ? "#fa5252" : "#4dabf7";
+
+    e.target.style.color = currentColor;
 
     if (playerHasWon() !== false) {
       playerText = `${currentPlayer} has won!`;
